@@ -12,7 +12,7 @@
 set -e
 
 echo "=========================================="
-echo "NVIDIA Container Toolkit 설치 시작"
+echo "NVIDIA Container Toolkit installation start"
 echo "=========================================="
 echo ""
 
@@ -61,10 +61,10 @@ echo "🧪 Testing GPU access in Docker..."
 if docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi; then
     echo ""
     echo "=========================================="
-    echo "✓ NVIDIA Container Toolkit 설치 완료!"
+    echo "✓ NVIDIA Container Toolkit installation complete!"
     echo "=========================================="
     echo ""
-    echo "이제 다음 명령어로 MonoGS를 실행할 수 있습니다:"
+    echo "Now you can run MonoGS using the following commands:"
     echo "  cd ~/monocular_gaussian_splatting_slam_benchmark/installs/MonoGS"
     echo "  ./run.sh"
     echo ""
