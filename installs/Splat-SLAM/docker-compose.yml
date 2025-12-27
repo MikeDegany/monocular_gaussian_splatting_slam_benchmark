@@ -1,0 +1,20 @@
+services:
+  splat-slam:
+    build: .
+    container_name: splat-slam
+    # Enable GPU support
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    # Mount only what matters: Data in, Results out
+    volumes:
+      - ./data:/workspace/Splat-SLAM/datasets
+      - ./output:/workspace/Splat-SLAM/output   # Results appear here
+      - ./pretrained:/workspace/Splat-SLAM/pretrained
+    # Keep the container running
+    stdin_open: true
+    tty: true
